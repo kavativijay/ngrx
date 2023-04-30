@@ -1,6 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ProductListingService } from '../services/product-listing.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { AppState } from '../app.state';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { getSelectedProduct } from '../product.selectors';
 
 export interface DialogData {
   data:any;
@@ -12,12 +16,14 @@ export interface DialogData {
   styleUrls: ['./item-detail.component.css']
 })
 export class ItemDetailComponent implements OnInit {
-  constructor(private productService: ProductListingService, @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  public dialogRef: MatDialogRef<ItemDetailComponent> ){
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData,
+  public dialogRef: MatDialogRef<ItemDetailComponent>, private store: Store<any> ){
   };
   selectedItem:any;
+  product$: Observable<any> | undefined;
+
 ngOnInit(): void {
-    this.selectedItem  = this.data;
+    this.product$ = this.store.pipe(select(state => state.products.selectedProduct))
 }
 
 close(){

@@ -1,4 +1,4 @@
-<h1 class="text-center mt-3">
+<!-- <h1 class="text-center mt-3">
   Product
  </h1>
 <div class="container">
@@ -10,7 +10,6 @@
             <mat-card-title class="text-center text-w bg-info p-3">{{
               item.title
             }}</mat-card-title>
-            <!-- <mat-card-content>{{ item.price }}</mat-card-content> -->
             <div class="text-center mt-3">
               <button class="btn btn-primary" (click)="openModal(item)">Details</button>
             </div>
@@ -19,17 +18,15 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
-<!-- <h1 class="text-center mt-3">
+<h1 class="text-center mt-3">
   Product
  </h1>
 <div class="container">
   <div class="row">
-    <div *ngIf="(products$ | async) as productsList">
-
     <div class="col-sm-4" *ngFor="let product of productsList">
       <div>
         <mat-card class="card mt-5">
@@ -38,14 +35,12 @@
               product.title
             }}</mat-card-title>
             <div class="text-center mt-3">
-              <button class="btn btn-primary" (click)="getCardDetails(product.id)">Details</button>
+              <button class="btn btn-primary" (click)="openModal(product)">Details</button>
             </div>
           </div>
         </mat-card>
       </div>
     </div>
-
-
-  </div>
+    
 </div>
-</div> -->
+</div>

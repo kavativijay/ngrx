@@ -1,3 +1,4 @@
+<div *ngIf="(product$ | async) as selectedItem">
 <div class="modal-header">
 	<h4 class="modal-title">{{selectedItem.category}}</h4>
 	<button type="button" class="close" aria-label="Close" (click)="close()">
@@ -17,6 +18,8 @@
 		</div>
 	</div>
 </div>
+</div>
+
 <div class="modal-footer">
 	<button type="button" class="btn btn-outline-dark" (click)="close()">Close</button>
 </div>
