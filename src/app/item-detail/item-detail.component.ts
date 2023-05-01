@@ -1,11 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ProductListingService } from '../services/product-listing.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AppState } from '../app.state';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { getSelectedProduct } from '../product.selectors';
-
 export interface DialogData {
   data:any;
 }
