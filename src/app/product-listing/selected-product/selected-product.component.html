@@ -1,0 +1,22 @@
+<div *ngIf="selectedItem">
+<div class="modal-header">
+	<h4 class="modal-title">{{selectedItem.category}}</h4>
+</div>
+<div class="modal-body">
+	<div class="card lesson-border">
+		<img class="card-img-top" width="100px" height="300px" src="{{selectedItem.thumbnail}}" alt="Card image cap">
+		<div class="card-body">
+			<p class="card-text"><b>Brand: </b>{{selectedItem.brand}}</p>
+			<p class="card-text"><b>Price: </b>{{selectedItem.price}}</p>
+                <h5 class="card-title"><b>Title: </b>{{selectedItem.title}}</h5>
+			<p class="card-text"><b>Description: </b>{{selectedItem.description}}</p>
+			<p class="card-text"><b>rating: </b>{{selectedItem.rating}}</p>
+			<p class="card-text"><b>Stock: </b>{{selectedItem.stock}}</p>
+		</div>
+	</div>
+</div>
+<div>
+  <button (click)="update()">Update</button>
+  <button (click)="delete()">Delete</button>
+</div>
+</div>

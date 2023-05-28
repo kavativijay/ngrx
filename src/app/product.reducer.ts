@@ -35,4 +35,6 @@ export const productReducer = createReducer(
   on(ProductActions.selectProduct, (state, { productId }) => ({
      ...state, selectedProduct: state.products.find(p => p.id === productId)
     })),
+  on(ProductActions.updateProduct, (state, { updatedProduct }) => ({ ...state, product: updatedProduct }))
+
 );

@@ -1,0 +1,91 @@
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+  background-color: #f4f4f4;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-header.active {
+  background-color: #ccc;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+
+.accordion-content ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.accordion-content li {
+  margin-bottom: 5px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+  background-color: #f4f4f4;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+
+.accordion-content ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.accordion-content li {
+  margin-bottom: 5px;
+}
+
+.padding-15{
+  padding: 15px;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+  .accordion-header {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-header {
+    font-size: 12px;
+  }
+}

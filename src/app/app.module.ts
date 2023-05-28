@@ -21,12 +21,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { productReducer } from './product.reducer';
 import { ProductEffects } from './product.effects';
+import { SelectedProductComponent } from './product-listing/selected-product/selected-product.component';
+import { CategoriesListComponent } from './product-listing/categories-list/categories-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListingComponent,
     ItemDetailComponent,
+    SelectedProductComponent,
+    CategoriesListComponent,
   ],
   imports: [
     BrowserModule,

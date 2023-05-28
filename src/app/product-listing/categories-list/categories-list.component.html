@@ -1,0 +1,22 @@
+
+<div class="accordion padding-15">
+	<div class="accordion-item" (click)="toggleAccordion(category)" *ngFor="let category of categories">
+		<h2 class="accordion-header" id="headingOne">
+			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+				aria-expanded="true" aria-controls="collapseOne">
+				{{category.category}}
+			</button>
+		</h2>
+		<div id="collapseOne" class="accordion-content" [ngStyle]="{display: category.open ? 'block' : 'none'}"
+			class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample"
+			*ngFor="let product of category.products">
+			<div class="accordion-body" (click)="details(product)">
+				{{ product.title }}
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="showDetails">
+	<app-selected-product [selectedItem]="selectedProduct" (updateEmit)="updateClick($event)"></app-selected-product>
+		<button (click)="back()">Back</button>
+	</div>
